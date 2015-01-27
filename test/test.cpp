@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
-#include "../FileDescriptor.h"
+#include "../FilePointer.h"
 
-TEST(FileReadDescriptor, FileAccess) { 
+TEST(FileReadPointer, FileAccess) { 
     {
-        FileReadDescriptor reader("../LICENSE");
+        FileReadPointer reader("../LICENSE");
         ASSERT_EQ(0, fseeko(reader, 0, SEEK_SET));
     }
 }

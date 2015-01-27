@@ -1,14 +1,14 @@
-#ifndef FILE_DESCRIPTOR_H_
-#define FILE_DESCRIPTOR_H_
+#ifndef FILE_POINTER_H_
+#define FILE_POINTER_H_
 
 #include <cstdio>
 #include "check.h"
 
 
-class FileDescriptor
+class FilePointer
 {
 public:
-    FileDescriptor(const char* filename, const char* attr = "wb") : m_fp(0)
+    FilePointer(const char* filename, const char* attr = "wb") : m_fp(0)
     {
         CHECK(filename != 0);
 
@@ -16,7 +16,7 @@ public:
 //        CHECK(m_fp != 0);
     }
 
-    virtual ~FileDescriptor()
+    virtual ~FilePointer()
     {
         if (m_fp)
         {
@@ -43,18 +43,18 @@ private:
 };
 
 
-class FileReadDescriptor : public FileDescriptor
+class FileReadPointer : public FilePointer
 {
 public:
-    FileReadDescriptor(const char* filename) : FileDescriptor(filename, "rb") {}
+    FileReadPointer(const char* filename) : FilePointer(filename, "rb") {}
 };
 
 
-class FileWriteDescriptor : public FileDescriptor
+class FileWritePointer : public FilePointer
 {
 public:
-    FileWriteDescriptor(const char* filename) : FileDescriptor(filename, "wb") {}
+    FileWritePointer(const char* filename) : FilePointer(filename, "wb") {}
 };
 
 
-#endif // FILE_DESCRIPTOR_H_
+#endif // FILE_POINTER_H_
