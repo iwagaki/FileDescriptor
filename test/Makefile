@@ -10,7 +10,7 @@ CFLAGS          += -Wstrict-prototypes -Wmissing-prototypes
 RELEASE_FLAGS   = -O3 -DNDEBUG
 DEBUG_FLAGS     = -O3 -g -DDEBUG
 
-TARGET          = ./a.out
+TARGET          = ./test
 
 LDFLAGS         += -lgtest_main -lgtest -lpthread
 ifneq ($(strip $(CXX_SRCS)), "")
